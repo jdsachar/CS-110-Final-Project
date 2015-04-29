@@ -2,7 +2,9 @@
 // 4/25/2015
 // Class WarCard
 // Adds some functionality to the Card class for the "War" Card Game.
-
+/**
+ * WarCard objects improve upon Card objects, adding functionality to help with playing War
+ */
 public class WarCard extends Card
 {
 	private boolean face;

@@ -2,7 +2,9 @@
 // CS 110
 // Player Class
 // Player was initially designed for my N player War build, but when I ran into issues with that I just reused it for the 2 player War.
-
+/**
+ * An Object representing a player for a game of War
+ */
 public class Player
 {
 	private String name;

@@ -4,7 +4,9 @@
 
 import java.util.Random;
 import java.util.ArrayList;
-
+/**
+ * WarDeck is a collection of WarCards with functionality to assist with the playing of War
+ */
 public class WarDeck
 {
 	private ArrayList<WarCard> deck;

@@ -1,10 +1,30 @@
+// Joshua D Sachar
+// CS 110
+// WarGame
+
+/**
+ * WarGame contains functions that aid in the playing of War (Card Game)
+ */
+
 public class WarGame
 {
+	/**
+	 * Primary Constructor
+	 * Initializes a game of War between provided players
+	 * @param Player Player 1
+	 * @param Player Player 2
+	 */
 	public WarGame(Player p1, Player p2)
 	{
 		initialize(p1,p2);
 	}
 
+	/**
+	 * initialize Method
+	 * Build a deck of WarCards and deal them to each player.
+	 * @param Player Player 1
+	 * @param Player Player 2
+	 */
 	public static void initialize(Player p1, Player p2)
 	{
 		WarDeck deck = new WarDeck(1);
@@ -24,7 +44,12 @@ public class WarGame
 		}
 		return;
 	}
-
+	/**
+	 * startBattle Method
+	 * Commands each player to play a card face up as long as they both have cards left in thier deck
+	 * @param Player Player 1
+	 * @param Player Player 2
+	 */
 	public static void startBattle(Player p1, Player p2)
 	{
 		if(checkEndGame(p1, p2) == 0)
@@ -34,7 +59,13 @@ public class WarGame
 			return;
 		}
 	}
-
+	/**
+	 * resolveBattle Method
+	 * Compares the top card of each player's field. Returns the winning player.
+	 * @param Player Player 1
+	 * @param Player Player 2
+	 * @return Player Winner
+	 */
 	public static Player resolveBattle(Player p1, Player p2)
 	{
 		WarCard p1TopCard = p1.peekCurrent();
@@ -52,7 +83,12 @@ public class WarGame
 			return p2;
 		}
 	}
-
+	/**
+	 * war Method
+	 * If both players have cards in thier deck remaining, each play a card face down.
+	 * @param Player Player 1
+	 * @param Player Player 2
+	 */
 	public static void war(Player p1, Player p2)
 	{
 		if(checkEndGame(p1, p2) == 0)
@@ -64,7 +100,12 @@ public class WarGame
 		else
 			return;
 	}
-
+	/**
+	 * giveSpoils Method
+	 * Gives all cards in both player's fields to the winner.
+	 * @param Player Winner
+	 * @param Player Loser
+	 */
 	public static void giveSpoils(Player winner, Player loser)
 	{
 		while(!winner.isFieldEmpty() || !loser.isFieldEmpty())
@@ -85,7 +126,13 @@ public class WarGame
 		}
 		return;
 	}
-
+	/**
+	 * checkEndGame Method
+	 * Checks if both players have cards remaining in thier decks. If Player 1's deck is empty, returns 1. If Player 2's deck is empty, returns 2. If Both Players decks are empty, returns 3. Otherwise returns 0.
+	 * @param Player Player 1
+	 * @param Player Player 2
+	 * @retun int Which player has lost.
+	 */
 	public static int checkEndGame(Player p1, Player p2)
 	{
 		if(p1.isDeckEmpty() || p2.isDeckEmpty())
@@ -100,7 +147,7 @@ public class WarGame
 		else
 			return 0;
 	}
-
+	// Test Function
 	public static void main(String[] args) 
 	{
 		Player player1 = new Player("Player 1");

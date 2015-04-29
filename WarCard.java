@@ -76,25 +76,34 @@ public class WarCard extends Card
 		{
 			case 1:
 			returnValue += "ace";
+			break;
 			case 11:
 			returnValue += "jack";
+			break;
 			case 12:
 			returnValue += "queen";
+			break;
 			case 13:
 			returnValue += "king";
+			break;
 			default:
 			returnValue += r;
+			break;
 		}
 		switch (s)
 		{
 			case 1:
 			returnValue += "h";
+			break;
 			case 2:
 			returnValue += "d";
+			break;
 			case 3:
 			returnValue += "c";
+			break;
 			case 4:
 			returnValue += "s";
+			break;
 		}
 		if (face)
 			returnValue += ".jpg";
